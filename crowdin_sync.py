@@ -424,7 +424,7 @@ def upload_translations_crowdin(branch, config):
         print('\nUploading translations to Crowdin '
               '(AOSP supported languages)')
         check_run(['crowdin',
-                   '--config=%s/config/%s.yaml' % (_DIR, branch),
+                   '--config=%s/config/komodo_%s.yaml' % (_DIR, branch),
                    'upload', 'translations', '--branch=%s' % branch,
                    '--no-import-duplicates', '--import-eq-suggestions',
                    '--auto-approve-imported'])
@@ -432,7 +432,7 @@ def upload_translations_crowdin(branch, config):
         print('\nUploading translations to Crowdin '
               '(non-AOSP supported languages)')
         check_run(['crowdin',
-                   '--config=%s/config/%s_aosp.yaml' % (_DIR, branch),
+                   '--config=%s/config/komodo_%s_aosp.yaml' % (_DIR, branch),
                    'upload', 'translations', '--branch=%s' % branch,
                    '--no-import-duplicates', '--import-eq-suggestions',
                    '--auto-approve-imported'])
